@@ -8,6 +8,7 @@ class BloodmanagerApplicationTests {
 
 	@Test
 	void contextLoads() {
+	
 	}
 
 }
