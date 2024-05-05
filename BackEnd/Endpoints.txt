@@ -1,0 +1,50 @@
+/admin
+    /login
+    /user
+        Get
+        Post 
+        Delete 
+        Put
+    /adminC
+        Get
+        Post 
+        Delete 
+        Put
+    /Center
+        Get
+        Post 
+        Delete 
+        Put
+    /donor
+        Get
+        Post 
+        Delete 
+        Put
+    /Blood
+        Get
+        Post 
+        Delete 
+        Put 
+
+
+/adminc
+    /login
+    /Blood
+        Get
+        Post 
+        Delete 
+        Put 
+    /donor
+        Get
+        Post 
+        Delete 
+        Put 
+
+/user
+    /login
+    /register
+    /donor
+        Get
+        Post 
+        Delete 
+        Put 
