@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("/api")
-public class CenterController {
+public class AdminCenterController {
 
     @Autowired
     private CenterService centerService;
