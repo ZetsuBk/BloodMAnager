@@ -45,9 +45,7 @@ public class User implements UserDetails {
     private String cne;
     @ManyToOne
     private BloodType bloodType;
-    @ManyToOne
-    private Center center;
-
+    
     @Enumerated(EnumType.STRING)
     private Role role;
 

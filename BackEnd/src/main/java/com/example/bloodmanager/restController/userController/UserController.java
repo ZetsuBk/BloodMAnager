@@ -1,4 +1,4 @@
-package com.example.bloodmanager.restController;
+package com.example.bloodmanager.restController.userController;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

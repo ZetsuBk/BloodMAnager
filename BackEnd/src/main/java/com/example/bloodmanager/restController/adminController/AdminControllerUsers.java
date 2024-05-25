@@ -1,8 +1,7 @@
-package com.example.bloodmanager.restController;
+package com.example.bloodmanager.restController.adminController;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,7 +12,6 @@ import com.example.bloodmanager.models.User;
 import com.example.bloodmanager.responedmodules.Message;
 import com.example.bloodmanager.service.UserService;
 import java.util.List;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,7 +21,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @RestController
 @RequestMapping("/api/admin")
-public class AdminController {
+public class AdminControllerUsers {
 
     @Autowired
     private UserService userService;
@@ -31,6 +29,11 @@ public class AdminController {
     @GetMapping({"/users","/users/"})
     public List<User> getUsers() {
         return userService.getAllUser();
+    }
+
+    @GetMapping({"/adminC","/adminC/"})
+    public List<User> getadminC() {
+        return userService.getAllAdminC();
     }
 
     @GetMapping("/users/{id}")
@@ -51,6 +54,15 @@ public class AdminController {
         return ResponseEntity.status(200).body(Message.writeMessage("User was save succesfuly"));
     }
 
+
+    @PutMapping({"/users","/users/"})
+    public ResponseEntity putMethodName(@RequestBody User user) {
+        userService.saveUser(user);
+        return ResponseEntity.status(200).body(Message.writeMessage("User was updated succesfuly"));
+    }
+
+
+    
 
 }
    

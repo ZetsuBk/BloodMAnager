@@ -12,6 +12,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Blood {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

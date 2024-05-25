@@ -18,7 +18,7 @@ import lombok.Setter;
 @Entity
 @Setter
 @Getter
-class Donor {
+public class Donor {
 
     public enum Cas { DONE , PENDING };
 
@@ -35,6 +35,5 @@ class Donor {
     @Enumerated(EnumType.STRING)
     private Cas cas;
         
-
      
 }
