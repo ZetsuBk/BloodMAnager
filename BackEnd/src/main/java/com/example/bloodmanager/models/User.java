@@ -3,33 +3,27 @@ package com.example.bloodmanager.models;
 import java.util.Collection;
 import java.util.List;
 
+import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@ToString
 public class User implements UserDetails {
 
     public enum Role {USER , ADMIN , ADMINC}
@@ -43,6 +37,21 @@ public class User implements UserDetails {
     private String password;
     private String phoneNumber;
     private String cne;
+    @OneToOne
+    private Center center;
+    
+    public User(String firstName, String lastName, String email, String password, String phoneNumber, String cne,
+            BloodType bloodType, Role role) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.phoneNumber = phoneNumber;
+        this.cne = cne;
+        this.bloodType = bloodType;
+        this.role = role;
+    }
+
     @ManyToOne
     private BloodType bloodType;
     

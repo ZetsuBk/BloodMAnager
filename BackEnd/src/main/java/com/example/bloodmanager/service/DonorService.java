@@ -34,4 +34,8 @@ public class DonorService {
             donorRepository.save(Donor);
     }
 
+    public List<Donor> getDonorsByCenter(long id){
+        return donorRepository.findAllByCenterId(id);
+    }
+
 }

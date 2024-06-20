@@ -20,7 +20,7 @@ import lombok.Setter;
 @Getter
 public class Donor {
 
-    public enum Cas { DONE , PENDING };
+    public enum Cas { DONE , PENDING , OPENE };
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

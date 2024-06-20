@@ -33,19 +33,30 @@ public class UserService {
         
     }
 
+    public User getUserByEmail(String email){
+        Optional<User> userOp = userRepository.findByEmail(email) ;
+        User user = null;
+        if(userOp.isPresent()){
+            user = userOp.get();
+            if(user !=null){
+                return user.getRole() == User.Role.USER ? user : null ;
+            }
+        }
+        return null;
+        
+    }
+
     public void deleteUserById(Long id){
         userRepository.deleteById(id);
     }
 
-    public void saveUser(User user){
-        userRepository.save(user);
+    public User saveUser(User user){
+        return userRepository.save(user);
     }
 
 
     public List<User> getAllAdminC(){
         return userRepository.findAll().stream().filter(u -> u.getRole() == User.Role.ADMINC ).collect(Collectors.toList());
     }
-
- 
     
 }
