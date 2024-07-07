@@ -18,7 +18,7 @@ public class Blood {
     private Long id;
     @ManyToOne
     private BloodType bloodType;
-    private Long stock;
+    private Float stock;
     @ManyToOne
     private Center center;
 
